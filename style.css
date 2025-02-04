@@ -1,0 +1,335 @@
+/* Global styling for the body */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0; /* Removes default margin around the body */
+  padding: 0; /* Removes default padding */
+  font-family: 'Poppins', sans-serif; /* Sets the font family to Poppins */
+  text-align: center; /* Centers the text on the page */
+  color: white; /* Sets the text color to white */
+  background-image: url('images/spacebackground.jpg'); /* Sets a background image */
+  background-size: cover; /* Ensures the background image covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  height: 100vh; /* Makes the body height cover the entire viewport */
+  padding-top: 50px; /* Adds space at the top of the body */
+}
+
+/* Header styling */
+header {
+  position: fixed; /* Fixes the header at the top of the page */
+  top: 0; /* Positions the header at the top */
+  left: 0; /* Positions the header at the left edge */
+  width: 100%; /* Makes the header take up the full width of the page */
+  background: rgba(0, 0, 0, 0.8); /* Sets a semi-transparent black background */
+  padding: 10px 0; /* Adds padding inside the header */
+  z-index: 1000; /* Ensures the header stays on top of other elements */
+}
+
+/* Styling for the navigation menu */
+nav ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes padding */
+  display: flex; /* Makes the list items align horizontally */
+  justify-content: center; /* Centers the list items */
+  gap: 200px; /* Adds a large gap between navigation links */
+}
+
+/* Styling for each navigation link */
+nav ul li a {
+  color: white; /* Sets the link color to white */
+  text-decoration: none; /* Removes the underline from links */
+  font-size: 18px; /* Sets the font size for the links */
+  font-weight: 400; /* Sets the font weight for the links */
+}
+
+nav ul li {
+  display: inline; /* Displays the list items in a row */
+}
+
+nav ul li a img.logo {
+  width: 50px; /* Set the width of the logo */
+  height: auto; /* Maintain the aspect ratio */
+  display: inline-block; /* Make the image inline with the text */
+  vertical-align: middle; /* Aligns the logo vertically */
+}
+
+/* Hero section styling (the main section that appears first) */
+.hero {
+  position: absolute; /* Positions the hero section absolutely */
+  top: 50%; /* Vertically centers the hero section */
+  left: 50%; /* Horizontally centers the hero section */
+  transform: translate(-50%, -50%); /* Corrects the position by adjusting for its own size */
+  z-index: 1; /* Ensures the hero section is above other content */
+  padding-top: 100px;
+}
+
+/* Hero heading styling */
+.hero h1 {
+  font-size: 48px; /* Sets a large font size for the heading */
+  font-weight: 700; /* Makes the heading bold */
+}
+
+/* Hero paragraph styling */
+.hero p {
+  font-size: 20px; /* Sets the font size for the paragraph */
+  font-weight: 400; /* Sets the normal font weight for the paragraph */
+  color: yellow; /* Sets the text color to yellow */
+}
+
+/* Content sections styling */
+.content-section {
+  height: 100vh; /* Makes the section cover the full viewport height */
+  display: flex; /* Uses flexbox for layout */
+  flex-direction: column; /* Stacks the content vertically */
+  align-items: center; /* Centers content horizontally */
+  justify-content: flex-start; /* Aligns the content at the top */
+  text-align: center; /* Centers the text */
+  color: white; /* Sets the text color to white */
+  background: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent black background */
+  padding: 50px; /* Adds padding inside the section */
+  margin-top: 100vh; /* Moves the content down by the height of the viewport */
+}
+
+/* About section container styling */
+.about-container {
+  display: flex; /* Uses flexbox for layout */
+  align-items: center; /* Vertically aligns items in the container */
+  justify-content: center; /* Aligns the content to the left */
+  margin-top: 50px; /* Adds space at the top of the container */
+  gap: 30px; /* Adds space between the image and text */
+}
+
+
+
+/* Styling for the about text */
+
+/* Image styling */
+.about-img {
+  width: 300px; /* Adjust the width of the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: adds rounded corners to the image */
+}
+.about-text {
+  text-align: left; /* Aligns text to the left */
+  margin-top: 20px; /* Adds space at the top of the text */
+  max-width: 600px; /* Limits the width of the text container */
+}
+
+/* Styling for the left image in the about section */
+.left-img {
+  display: block; /* Makes the image a block-level element */
+  margin-left: 50px; /* Adds space to the left of the image */
+  width: 300px; /* Sets the image width */
+  height: 300px; /* Sets the image height */
+}
+
+/* Styling for the additional text in the about section */
+.movetext {
+  margin-left: 100px; /* Adds space to the left of the text */
+}
+
+/* Contact info styling */
+
+#contact h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.contact-details li {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.contact-details li a {
+  color: #fff200;
+  text-decoration: none;
+}
+
+.contact-details li a:hover {
+  text-decoration: underline;
+}
+
+.contact-details i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.contact-info ul {
+  text-align: left; /* Aligns the contact info list to the left */
+}
+
+.contact-info li {
+  list-style-type: none; /* Removes default list styling */
+}
+
+/* Contact info link styling */
+.contact-info a {
+  color: white; /* Sets the link color to white */
+  text-decoration: none; /* Removes the underline from links */
+}
+
+.game-container {
+  display: flex; /* Flexbox for horizontal layout */
+  align-items: center; /* Vertically align the text and image */
+  justify-content: center; /* Horizontally center the items */
+  margin-top: 50px;
+  gap: 30px; /* Adds space between the image and text */
+}
+
+/* Game image styling */
+.game-img {
+  width: 300px; /* Adjust the size of the image */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Game text styling */
+.game-text {
+  text-align: left;
+  max-width: 600px;
+}
+
+/* Controls section styling */
+.controls {
+  margin-top: 30px;
+  margin-right: 500px;
+  text-align: left;
+  color: yellow;
+}
+
+/* Styling for control keys */
+.controls p span {
+  font-weight: bold;
+}
+
+#download {
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#download {
+  display: flex;
+  justify-content: center; /* Horizontally centers content */
+  align-items: center; /* Vertically centers content */
+  height: 100vh; /* Full viewport height */
+  color: white;
+  background: rgba(0, 0, 0, 0.7); /* Slightly darken the background for better contrast */
+  text-align: center;
+}
+
+.download-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.download-container:hover {
+  transform: translateY(-5px); /* Adds a little hover effect */
+}
+
+.download-btn {
+  padding: 20px 40px;
+  font-size: 20px;
+  color: white;
+  background-color: purple; /* Bright button color */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: rgb(90, 0, 90); /* Brighten the button on hover */
+  transform: translateY(-3px); /* Add a hover effect */
+  box-shadow: 0 0 20px rgb(255, 255, 255); /* Increase the glow on hover */
+}
+
+.download-btn:active {
+  transform: translateY(1px); /* Add a subtle active click effect */
+}
+
+/* Media query for devices with a width of 768px or less (tablets and larger smartphones) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px; /* Reduces the font size for smaller screens */
+  }
+
+  .hero p {
+    font-size: 16px; /* Reduces the font size for smaller screens */
+  }
+
+  .content-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 50px;
+    margin-top: 100vh;
+  }
+
+  .left-img {
+    margin-left: 0; /* Removes the left margin from the image */
+    width: 250px; /* Reduces the image width */
+    height: 250px; /* Reduces the image height */
+  }
+
+  .about-container {
+    flex-direction: column; /* Stacks the content vertically on smaller screens */
+    align-items: center; /* Centers the items horizontally */
+  }
+
+  .movetext {
+    margin-left: 0; /* Removes the left margin from the additional text */
+  }
+}
+
+/* Media query for devices with a width of 480px or less (small smartphones) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px; /* Further reduces the font size for very small screens */
+  }
+
+  .hero p {
+    font-size: 14px; /* Further reduces the font size for very small screens */
+  }
+
+  .game-container {
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center;
+  }
+
+  .game-img {
+    width: 250px; /* Resize the image for smaller screens */
+  }
+
+  .controls {
+    text-align: center;
+}
+}
