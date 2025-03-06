@@ -1,149 +1,501 @@
-/* Global styling for the body */
+/* Global styling */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0; /* Removes default margin around the body */
-  padding: 0; /* Removes default padding */
-  font-family: 'Poppins', sans-serif; /* Sets the font family to Poppins */
-  text-align: center; /* Centers the text on the page */
-  color: white; /* Sets the text color to white */
-  background-image: url('images/spacebackground.jpg'); /* Sets a background image */
-  background-size: cover; /* Ensures the background image covers the entire screen */
-  background-position: center; /* Centers the background image */
-  background-attachment: fixed; /* Keeps the background image fixed while scrolling */
-  background-repeat: no-repeat; /* Prevents the background image from repeating */
-  height: 100vh; /* Makes the body height cover the entire viewport */
-  padding-top: 50px; /* Adds space at the top of the body */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: white;
+  background-image: url('images/spacebackground.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Particles effect */
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20vw);
+    opacity: 0;
+  }
 }
 
 /* Header styling */
 header {
-  position: fixed; /* Fixes the header at the top of the page */
-  top: 0; /* Positions the header at the top */
-  left: 0; /* Positions the header at the left edge */
-  width: 100%; /* Makes the header take up the full width of the page */
-  background: rgba(0, 0, 0, 0.8); /* Sets a semi-transparent black background */
-  padding: 10px 0; /* Adds padding inside the header */
-  z-index: 1000; /* Ensures the header stays on top of other elements */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
-/* Styling for the navigation menu */
+header:hover {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+/* Navigation menu */
 nav ul {
-  list-style: none; /* Removes default list styling */
-  padding: 0; /* Removes padding */
-  display: flex; /* Makes the list items align horizontally */
-  justify-content: center; /* Centers the list items */
-  gap: 200px; /* Adds a large gap between navigation links */
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
 }
 
-/* Styling for each navigation link */
 nav ul li a {
-  color: white; /* Sets the link color to white */
-  text-decoration: none; /* Removes the underline from links */
-  font-size: 18px; /* Sets the font size for the links */
-  font-weight: 400; /* Sets the font weight for the links */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  position: relative;
+  padding: 10px 5px;
+  transition: all 0.3s ease;
 }
 
-nav ul li {
-  display: inline; /* Displays the list items in a row */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff200;
+  transition: width 0.3s ease;
 }
 
-nav ul li a img.logo {
-  width: 50px; /* Set the width of the logo */
-  height: auto; /* Maintain the aspect ratio */
-  display: inline-block; /* Make the image inline with the text */
-  vertical-align: middle; /* Aligns the logo vertically */
+nav ul li a:hover::after {
+  width: 100%;
 }
 
-/* Hero section styling (the main section that appears first) */
+/* Hero section */
 .hero {
-  position: absolute; /* Positions the hero section absolutely */
-  top: 50%; /* Vertically centers the hero section */
-  left: 50%; /* Horizontally centers the hero section */
-  transform: translate(-50%, -50%); /* Corrects the position by adjusting for its own size */
-  z-index: 1; /* Ensures the hero section is above other content */
-  padding-top: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hero heading styling */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: -1;
+}
+
 .hero h1 {
-  font-size: 48px; /* Sets a large font size for the heading */
-  font-weight: 700; /* Makes the heading bold */
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  animation: glow 3s infinite alternate;
 }
 
-/* Hero paragraph styling */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 0, 0.7);
+  }
+}
+
 .hero p {
-  font-size: 20px; /* Sets the font size for the paragraph */
-  font-weight: 400; /* Sets the normal font weight for the paragraph */
-  color: yellow; /* Sets the text color to yellow */
+  font-size: 24px;
+  font-weight: 400;
+  color: yellow;
+  letter-spacing: 3px;
+  animation: fadeIn 2s ease;
 }
 
-/* Content sections styling */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero CTA button */
+.hero-cta {
+  margin-top: 40px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, purple 0%, #4b0082 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(75, 0, 130, 0.4);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hero-btn span {
+  margin-right: 10px;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(75, 0, 130, 0.6);
+}
+
+.hero-btn:hover::before {
+  left: 100%;
+}
+
+/* Content sections */
 .content-section {
-  height: 100vh; /* Makes the section cover the full viewport height */
-  display: flex; /* Uses flexbox for layout */
-  flex-direction: column; /* Stacks the content vertically */
-  align-items: center; /* Centers content horizontally */
-  justify-content: flex-start; /* Aligns the content at the top */
-  text-align: center; /* Centers the text */
-  color: white; /* Sets the text color to white */
-  background: rgba(0, 0, 0, 0.7); /* Adds a semi-transparent black background */
-  padding: 50px; /* Adds padding inside the section */
-  margin-top: 100vh; /* Moves the content down by the height of the viewport */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 100px 50px 50px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: all 0.5s ease;
+  pointer-events: auto;
+  left: 0;
+  top: 0;
 }
 
-/* About section container styling */
+.content-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.content-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #fff200;
+}
+
+/* About section */
 .about-container {
-  display: flex; /* Uses flexbox for layout */
-  align-items: center; /* Vertically aligns items in the container */
-  justify-content: center; /* Aligns the content to the left */
-  margin-top: 50px; /* Adds space at the top of the container */
-  gap: 30px; /* Adds space between the image and text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
 }
 
-
-
-/* Styling for the about text */
-
-/* Image styling */
 .about-img {
-  width: 300px; /* Adjust the width of the image */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: adds rounded corners to the image */
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
+
+.about-img:hover {
+  transform: scale(1.05);
+}
+
 .about-text {
-  text-align: left; /* Aligns text to the left */
-  margin-top: 20px; /* Adds space at the top of the text */
-  max-width: 600px; /* Limits the width of the text container */
+  text-align: left;
+  max-width: 600px;
+  line-height: 1.8;
 }
 
-/* Styling for the left image in the about section */
-.left-img {
-  display: block; /* Makes the image a block-level element */
-  margin-left: 50px; /* Adds space to the left of the image */
-  width: 300px; /* Sets the image width */
-  height: 300px; /* Sets the image height */
+/* Skills container */
+.skills-container {
+  margin-top: 30px;
 }
 
-/* Styling for the additional text in the about section */
-.movetext {
-  margin-left: 100px; /* Adds space to the left of the text */
+.skill {
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-/* Contact info styling */
+.skill span {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background: linear-gradient(90deg, #fff200, orange);
+  border-radius: 5px;
+  transition: width 1.5s ease;
+}
+
+/* Improved contact button styling */
+.contact-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: #fff200;
+  color: #000;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 242, 0, 0.3);
+}
+
+/* Game section */
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.game-img {
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  perspective: 1000px;
+}
+
+.game-text {
+  text-align: left;
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.game-tagline {
+  color: #fff200;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.game-features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature i {
+  font-size: 24px;
+  color: #fff200;
+}
+
+.controls {
+  margin-top: 50px;
+  text-align: left;
+  color: yellow;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.controls h3 {
+  margin-top: 0;
+  border-bottom: 2px solid yellow;
+  padding-bottom: 10px;
+}
+
+.controls p span {
+  font-weight: bold;
+  display: inline-block;
+  min-width: 100px;
+  background-color: rgba(128, 0, 128, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Game demo animation */
+.game-demo {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: 50px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.spaceship {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateX(-50%) rotate(-90deg);
+  animation: moveShip 8s infinite linear;
+  z-index: 2;
+}
+
+.asteroid {
+  position: absolute;
+  background-color: gray;
+  border-radius: 50%;
+  animation: moveAsteroid linear infinite;
+}
+
+.asteroid-1 {
+  width: 20px;
+  height: 20px;
+  top: -20px;
+  left: 30%;
+  animation-duration: 6s;
+}
+
+.asteroid-2 {
+  width: 30px;
+  height: 30px;
+  top: -30px;
+  left: 60%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+
+.asteroid-3 {
+  width: 15px;
+  height: 15px;
+  top: -15px;
+  left: 10%;
+  animation-duration: 5s;
+  animation-delay: 3s;
+}
+
+@keyframes moveShip {
+  0% { transform: translateX(-100%) rotate(-90deg); }
+  50% { transform: translateX(100%) rotate(-90deg); }
+  51% { transform: translateX(100%) rotate(90deg); }
+  100% { transform: translateX(-100%) rotate(90deg); }
+}
+
+@keyframes moveAsteroid {
+  from { top: -50px; }
+  to { top: 250px; }
+}
+
+/* Contact section */
+#contact {
+  padding-top: 100px;
+  background: rgba(0, 0, 0, 0.85); /* Ensuring proper background */
+}
 
 #contact h2 {
-  font-size: 2rem;
-  text-align: center;
-  color: #ffffff;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 #contact p {
-  font-size: 1.1rem;
-  text-align: center;
-  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 50px;
 }
 
 .contact-details ul {
@@ -151,185 +503,484 @@ nav ul li a img.logo {
   padding: 0;
   text-align: left;
   margin: 20px 0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
 .contact-details li {
-  font-size: 1rem;
-  margin: 10px 0;
+  font-size: 18px;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.contact-details li:hover {
+  transform: translateX(10px);
 }
 
 .contact-details li a {
   color: #fff200;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .contact-details li a:hover {
+  color: #ffff80;
   text-decoration: underline;
 }
 
 .contact-details i {
-  margin-right: 10px;
+  margin-right: 15px;
   color: #007bff;
-}
-
-.contact-info ul {
-  text-align: left; /* Aligns the contact info list to the left */
-}
-
-.contact-info li {
-  list-style-type: none; /* Removes default list styling */
-}
-
-/* Contact info link styling */
-.contact-info a {
-  color: white; /* Sets the link color to white */
-  text-decoration: none; /* Removes the underline from links */
-}
-
-.game-container {
-  display: flex; /* Flexbox for horizontal layout */
-  align-items: center; /* Vertically align the text and image */
-  justify-content: center; /* Horizontally center the items */
-  margin-top: 50px;
-  gap: 30px; /* Adds space between the image and text */
-}
-
-/* Game image styling */
-.game-img {
-  width: 300px; /* Adjust the size of the image */
-  height: auto;
-  border-radius: 8px;
-}
-
-/* Game text styling */
-.game-text {
-  text-align: left;
-  max-width: 600px;
-}
-
-/* Controls section styling */
-.controls {
-  margin-top: 30px;
-  margin-right: 500px;
-  text-align: left;
-  color: yellow;
-}
-
-/* Styling for control keys */
-.controls p span {
-  font-weight: bold;
-}
-
-#download {
-  color: white;
-  padding: 50px 0;
+  font-size: 24px;
+  width: 30px;
   text-align: center;
 }
 
+/* Contact form */
+.contact-form-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact-form-container h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.contact-form {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Added to fix input sizing */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 242, 0, 0.5);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, purple 0%, #4b0082 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(75, 0, 130, 0.4);
+}
+
+/* Download section */
 #download {
   display: flex;
-  justify-content: center; /* Horizontally centers content */
-  align-items: center; /* Vertically centers content */
-  height: 100vh; /* Full viewport height */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   color: white;
-  background: rgba(0, 0, 0, 0.7); /* Slightly darken the background for better contrast */
   text-align: center;
+  z-index: 10;
+  position: relative;
+  opacity: 1;
+}
+
+.download-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Ensure container takes full width up to max-width */
+}
+
+.download-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.download-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.download-container h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.version-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.requirements {
+  margin-top: 40px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.requirements h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.requirements p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* Download section - Fixed CSS */
+#download {
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  opacity: 1;
+  padding-top: 100px;
 }
 
 .download-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 30px;
-  background-color: black;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.download-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  z-index: -1;
+  pointer-events: none;
 }
 
 .download-container:hover {
-  transform: translateY(-5px); /* Adds a little hover effect */
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
 }
 
+.version-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Updated download button styling */
 .download-btn {
-  padding: 20px 40px;
-  font-size: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 18px;
   color: white;
-  background-color: purple; /* Bright button color */
+  background: linear-gradient(135deg, purple 0%, #4b0082 100%);
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+  box-shadow: 0 10px 20px rgba(75, 0, 130, 0.4);
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mac-download-btn {
+  background: linear-gradient(135deg, #800080 0%, #4b0082 100%);
+}
+
+.windows-download-btn {
+  background: linear-gradient(135deg, #4b0082 0%, #800080 100%);
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
 }
 
 .download-btn:hover {
-  background-color: rgb(90, 0, 90); /* Brighten the button on hover */
-  transform: translateY(-3px); /* Add a hover effect */
-  box-shadow: 0 0 20px rgb(255, 255, 255); /* Increase the glow on hover */
+  background: linear-gradient(135deg, #4b0082 0%, purple 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(75, 0, 130, 0.6);
 }
 
-.download-btn:active {
-  transform: translateY(1px); /* Add a subtle active click effect */
+.download-btn:hover::before {
+  left: 100%;
 }
 
-/* Media query for devices with a width of 768px or less (tablets and larger smartphones) */
+.download-btn.pulse {
+  animation: pulse 1s;
+}
+
+.new-features {
+  margin-top: 30px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.new-features h3 {
+  color: #fff200;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.new-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.new-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.new-features li:hover {
+  transform: translateX(5px);
+}
+
+.new-features i {
+  color: #fff200;
+  font-size: 18px;
+  margin-right: 15px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Footer styling - FIXED */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px 0;
+  margin-top: 50px;
+  width: 100%;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff200;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #fff200;
+  transform: translateY(-5px);
+}
+
+/* Animation for download button pulse */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(128, 0, 128, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(128, 0, 128, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(128, 0, 128, 0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  nav ul {
+    gap: 40px;
+  }
+  
+  .hero h1 {
+    font-size: 54px;
+  }
+  
+  .about-container, .game-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .about-text, .game-text {
+    text-align: center;
+  }
+  
+  .controls {
+    margin-right: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 32px; /* Reduces the font size for smaller screens */
+    font-size: 42px;
   }
-
+  
   .hero p {
-    font-size: 16px; /* Reduces the font size for smaller screens */
+    font-size: 18px;
   }
-
+  
+  nav ul {
+    gap: 20px;
+  }
+  
   .content-section {
-    height: 100vh;
-    display: flex;
+    padding: 100px 20px 50px;
+  }
+  
+  .about-img, .game-img {
+    width: 250px;
+  }
+  
+  .footer-content {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
     text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 50px;
-    margin-top: 100vh;
+    gap: 20px;
   }
-
-  .left-img {
-    margin-left: 0; /* Removes the left margin from the image */
-    width: 250px; /* Reduces the image width */
-    height: 250px; /* Reduces the image height */
-  }
-
-  .about-container {
-    flex-direction: column; /* Stacks the content vertically on smaller screens */
-    align-items: center; /* Centers the items horizontally */
-  }
-
-  .movetext {
-    margin-left: 0; /* Removes the left margin from the additional text */
+  
+  .footer-social {
+    justify-content: center;
   }
 }
 
-/* Media query for devices with a width of 480px or less (small smartphones) */
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 24px; /* Further reduces the font size for very small screens */
+    font-size: 32px;
   }
-
+  
   .hero p {
-    font-size: 14px; /* Further reduces the font size for very small screens */
+    font-size: 16px;
   }
-
-  .game-container {
-    flex-direction: column; /* Stack the image and text vertically */
-    align-items: center;
+  
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap;
   }
-
-  .game-img {
-    width: 250px; /* Resize the image for smaller screens */
+  
+  nav ul li a {
+    font-size: 16px;
   }
-
-  .controls {
-    text-align: center;
-}
+  
+  .content-section h2 {
+    font-size: 28px;
+  }
+  
+  .about-img, .game-img {
+    width: 200px;
+  }
+  
+  .download-btn {
+    padding: 15px 25px;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    max-width: 220px;
+  }
+  
+  .new-features li {
+    font-size: 14px;
+    line-height: 1.4;
+  }
 }

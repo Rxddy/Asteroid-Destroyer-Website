@@ -4,106 +4,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asteroid Destroyer</title>
+    <title>Asteroid Destroyer | Retro Space Game</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Added animate.css for additional animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <meta name="description" content="Asteroid Destroyer - A retro-style space shooter game. Navigate through the galaxy, battle enemy ships, and dodge asteroids in this exciting arcade experience.">
 </head>
 <body>
 
     <!-- Hero section with title and subtitle -->
     <section class="hero">
-        <h1>ASTEROID DESTROYER</h1>
-        <p>DIVE INTO RETRO GAMING</p>
+        <h1 class="animate__animated animate__fadeInDown">ASTEROID DESTROYER</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">DIVE INTO RETRO GAMING</p>
+        <div class="hero-cta animate__animated animate__fadeIn animate__delay-2s">
+            <a href="#game" class="hero-btn">
+                <span>PLAY NOW</span>
+                <i class="fas fa-rocket"></i>
+            </a>
+        </div>
     </section>
 
     <!-- Header section containing the navigation bar -->
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#game">Game Description</a></li>
-                <li><a href="index.html">🚀</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#download">Download</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#game"><i class="fas fa-gamepad"></i> Game</a></li>
+                <li><a href="index.html"><i class="fas fa-rocket"></i></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#download"><i class="fas fa-download"></i> Download</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- About Section -->
     <section id="about" class="content-section">
+        <h2>About Me</h2>
         <div class="about-container">
-<br> <br>
-            <img src="images/myself.jpg" alt="About Me" class="about-img" style = "width: 400px;">  
-                <div class="about-text">
-                    <h2>About Me</h2>
-                        <p class="about-text">
-                            Hi! I'm Rusanth Pirabakaran, a passionate game developer with a love for 
-                            retro gaming. I have always been fascinated by classic arcade games from 
-                            the 80s and 90s, which is why I decided to create "Asteroid Destroyer," 
-                            a retro-style space shooter game. I used Python, HTML, CSS and Java to 
-                            create both the website and the game. I'm constantly learning new techniques 
-                            to improve my skills. In addition to my love for game development, I enjoy 
-                            playing sports such as volleyball and video games like Valorant. I created 
-                            this website to showcase my work and connect with other gamers and developers. 
-                            Feel free to reach out if you'd like to collaborate or discuss gaming projects!
-                        </p>
+            <img src="images/myself.jpg" alt="About Me" class="about-img">
+            <div class="about-text">
+                <p>
+                    Hi! I'm Rusanth Pirabakaran, a passionate game developer with a love for 
+                    retro gaming. I have always been fascinated by classic arcade games from 
+                    the 80s and 90s, which is why I decided to create "Asteroid Destroyer," 
+                    a retro-style space shooter game.
+                </p>
+                <p>
+                    I used Python, HTML, CSS, and Java to create both the website and the game. 
+                    I'm constantly learning new techniques to improve my skills.
+                </p>
+                <p>
+                    In addition to my love for game development, I enjoy playing sports such as 
+                    volleyball and video games like Valorant. I created this website to showcase 
+                    my work and connect with other gamers and developers.
+                </p>
+                <div class="skills-container">
+                    <div class="skill">
+                        <span>Python</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span>HTML/CSS</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+                    </div>
+                    <div class="skill">
+                        <span>Java</span>
+                        <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+                    </div>
                 </div>
+                <a href="#contact" class="contact-btn">Connect with me!</a>
+            </div>
         </div>
     </section>
 
-    <section id = "game" class="content-section">
-        <div class="game-container">
-          <!-- Image now on the right -->
-          <div class="game-text">
-            <h2>Game Description</h2>
-            <p>Space Wars is an exciting retro-style space shooter where players navigate through the galaxy, 
-                battling waves of enemy ships and dodging incoming asteroids. With fast-paced action, classic
-                pixel graphics, and immersive sound effects, this game brings the thrill of old-school arcade space
-                battles to life. Are you ready to test your reflexes and conquer the cosmos? 🚀✨</p>
-          </div>
-          <img src="images/enemy.gif" alt="Game Image" class="game-img">
+<!-- Game Section -->
+<section id="game" class="content-section">
+    <h2>Game Description</h2>
+    <div class="game-container">
+        <div class="game-text">
+            <p>
+                Asteroid Destroyer is an exciting retro-style space shooter where players navigate through the galaxy, 
+                battling waves of enemy ships and dodging incoming asteroids.
+            </p>
+            <p>
+                With fast-paced action, classic pixel graphics, and immersive sound effects, this game brings 
+                the thrill of old-school arcade space battles to life.
+            </p>
+            <p class="game-tagline">
+                Are you ready to test your reflexes and conquer the cosmos? 🚀✨
+            </p>
+            <div class="game-features">
+                <div class="feature">
+                    <i class="fas fa-rocket"></i>
+                    <span>Fast-paced action</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-star"></i>
+                    <span>Classic pixel graphics</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Immersive sounds</span>
+                </div>
+            </div>
+            
+            <!-- New feature highlight section -->
+            <div class="new-features">
+                <h3>Special Features</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-palette"></i>
+                        <span>Customizable ship colors - Change your spaceship's appearance in the menu screen</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-heart"></i>
+                        <span>Health power-ups - Collect randomly spawned health packs to recover during intense battles</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-cog"></i>
+                        <span>Intuitive menu system - Easily navigate game options and customize your experience</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-square"></i>
+                        <span>Customizable Background Colors - Change the Background of the Game</span>
+                    </li>
+                </ul>
+            </div>
         </div>
-      
-        <!-- Controls section below the description -->
-        <div class="controls">
-          <h3>Controls</h3>
-          <p><span>A</span> - To turn left</p>
-          <p><span>D</span> - To turn right</p>
-          <p><span>Spacebar</span> - To shoot missiles</p>
-          <p><span>Up Arrow</span> - Speed up</p>
-          <p><span>Down Arrow</span> - Slow down</p>
-        </div>
-      </section>
-
-<!-- Contact Section -->
-<section id="contact" class="content-section">
-    <h2>Contact Us <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"> </h2>
-    <p>📧 Have questions or feedback about Asteroid Destroyer? We'd love to hear from you! Reach out to us:</p>
-
-    <div class="contact-details">
-        <ul>
-            <li><i class="fas fa-envelope"></i> Email: <a href="mailto:Rusanthpirabakaran@gmail.com">Rusanthpirabakaran@gmail.com</a></li>
-            <li><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/rxddy._/" target="_blank">@rxddy._</a></li>
-            <li><i class="fab fa-discord"></i> Discord: <a href="https://discord.gg/TgVk8922He" target="_blank">Join our Discord</a></li>
-            <li><i class="fab fa-github"></i> Website GitHub: <a href="https://github.com/Rxddy/Asteroid-Destroyer-Website" target="_blank">Astroid Destroyer websight GitHub</a></li>
-            <li> <i class="fab fa-github"> </i>Game Github: <a href="https://github.com/Rxddy/Asteroid-Destroyer-Game" target="_blank"> Space Wars Github</a></li>
-        </ul>
+        <img src="images/enemy.gif" alt="Game Image" class="game-img">
     </div>
 
-    <p>We look forward to hearing from you!</p>
+    <!-- Controls section below the description -->
+    <div class="controls">
+        <h3>Game Controls</h3>
+        <p><span>A</span> To turn left</p>
+        <p><span>D</span> To turn right</p>
+        <p><span>Spacebar</span> To shoot missiles</p>
+        <p><span>Up Arrow</span> Speed up</p>
+        <p><span>Down Arrow</span> Slow down</p>
+    </div>
 </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <h2>Contact Me</h2>
+        <p>📧 Have questions or feedback about Asteroid Destroyer? I'd love to hear from you!</p>
 
-    <!-- Download Section -->
-    <section id="download" class="content-section">
-        <div class="download-container">
-            <h2>Download ASTEROID DESTROYER</h2>
-            <p>Get the game by clicking the button below!</p>
-            <a href="https://github.com/Rxddy/Asteroid-Destroyer-Game/raw/main/dist.zip" target="_blank">
-                <button class="download-btn">Download Game</button>
-            </a>
+        <div class="contact-details">
+            <ul>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:Rusanthpirabakaran@gmail.com">Rusanthpirabakaran@gmail.com</a></li>
+                <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/rxddy._/" target="_blank">@rxddy._</a></li>
+                <li><i class="fab fa-discord"></i> <a href="https://discord.gg/TgVk8922He" target="_blank">Join our Discord</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/Rxddy/Asteroid-Destroyer-Website" target="_blank">Asteroid Destroyer Website GitHub</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/Rxddy/Asteroid-Destroyer-Game" target="_blank">Asteroid Destroyer Game GitHub</a></li>
+            </ul>
         </div>
-    </section>
+        
+        <div class="contact-form-container">
+            <h3>Send me a message</h3>
+            <form class="contact-form" action="https://formspree.io/f/xrbenlnl" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    
+    </section> 
+<!-- Download Section -->
+<section id="download" class="content-section">
+    <h2>Download Asteroid Destroyer</h2>
+    <div class="download-container">
+      <p>Ready to start your space adventure? Download Asteroid Destroyer now and begin your cosmic journey!</p>
+      <p>Available for Windows, Mac, and Linux.</p>
+      
+      <a href="#" id="mac-download-link" class="download-btn mac-download-btn">Download for Mac</a>
+      <a href="#" id="windows-download-link" class="download-btn windows-download-btn">Download for Windows</a>
+      
+      <p class="version-info">Current Version: 1.2.5</p>
+      
+      <div class="requirements">
+        <h3>System Requirements</h3>
+        <p>OS: Windows 7/8/10, macOS 10.12+</p>
+        <p>Processor: 2.0 GHz Dual Core</p>
+        <p>Memory: 2 GB RAM</p>
+        <p>Graphics: DirectX 9 compatible</p>
+        <p>Storage: 500 MB available space</p>
+      </div>
+    </div>
+</section>
 
+    <!-- Footer section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Asteroid Destroyer</h3>
+                <p>© 2025 Rusanth Pirabakaran. All rights reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/Rxddy" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/rxddy._/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://discord.gg/TgVk8922He" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
